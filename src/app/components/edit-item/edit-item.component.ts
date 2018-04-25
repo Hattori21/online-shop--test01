@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-edit-item',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditItemComponent implements OnInit {
 
-  constructor() { }
+	idItem: string;
+
+  constructor(
+  	private route: ActivatedRoute,
+  	private router: Router
+  ) { }
 
   ngOnInit() {
+  	this.idItem = this.route.snapshot.params['id'];
   }
 
 }

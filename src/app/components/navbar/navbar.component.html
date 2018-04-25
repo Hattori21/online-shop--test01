@@ -1,3 +1,37 @@
-<p>
-  navbar works!
-</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+  	<p class="mb-0">Jaume Montalvo</p>
+  	<span class="text-danger">WEB DEVELOPER</span>
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active" *ngIf="isLogin">
+        <a class="nav-link" href="#" routerLink="/add-item">New Item</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLink="/about">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngIf="isLogin">
+        <span class="badge pill badge-secondary">{{ userName }}</span>
+        <img src="{{ userAvatar }}" class="rounded-circle">        
+        <span class="badge pill badge-secondary">{{ userEmail }}</span>
+      </li>      
+      <li class="nav-item active" *ngIf="!isLogin">
+        <a class="nav-link" href="#" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLogin">
+        <a class="nav-link" href="#" routerLink="/signup">Signup</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogin">
+        <a class="nav-link" href="#" (click)="onClickLogout()">Logout</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
