@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 	public userName: string;
 	public userEmail: string;
   public userAvatar: string;
+  public userID: string;
 
   constructor(
   	public authService: AuthService,
@@ -20,16 +21,21 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  	this.authService.getAuth().subscribe( auth =>{
-  		if(auth){
-  			this.isLogin = true;
-  			this.userName = auth.displayName;
-  			this.userEmail = auth.email;
+    this.onCheckoutUserLogged();
+  }
+
+  onCheckoutUserLogged(){
+    this.authService.getAuth().subscribe( auth =>{
+      if(auth){
+        this.isLogin = true;
+        this.userName = auth.displayName;
+        this.userEmail = auth.email;
         this.userAvatar = auth.photoURL;
-  		}else{
-  			this.isLogin = false;
-  		}
-  	})
+        this.userID = auth.uid;
+      }else{
+        this.isLogin = false;
+      }
+    })
   }
 
   onClickLogout(){
