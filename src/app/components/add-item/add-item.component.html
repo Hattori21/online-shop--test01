@@ -2,29 +2,53 @@
 	<div class="col-md-10 mx-auto mt-2">
 		<div class="card px-2 py-2">
 			<h2>Add a new item</h2>
-			<form action="">
+			<form action="" #formAddItem="ngForm" (ngSubmit)="onAddItem(formAddItem)">
 
 				<div class="form-group">
 					<label for="title">Title</label>
-					<input type="text" name="title" id="title" class="form-control">
+					<input 
+						type="text" 
+						name="title" 
+						id="title" 
+						class="form-control"
+						[(ngModel)]="item.title"
+					>
 				</div>
 
 				<div class="form-group">
 					<label for="description">Description</label>
-					<textarea type="text" name="description" id="description" class="form-control"></textarea>
+					<textarea 
+						type="text" 
+						name="description" 
+						id="description" 
+						class="form-control"
+						[(ngModel)]="item.description"
+						></textarea>
 				</div>
 
 				<div class="form-group">
 					<label for="specs">Specs</label>
-					<textarea type="text" name="specs" id="specs" class="form-control"></textarea>
+					<textarea 
+						type="text" 
+						name="specs" 
+						id="specs" 
+						class="form-control"
+						[(ngModel)]="item.specs"
+					></textarea>
 				</div>
 
 				<div class="form-group">
 					<label for="platform">Platform</label>
-					<select type="text" name="platform" id="platform" class="form-control">
-						<option>Windows</option>
-						<option>MacOS</option>
-						<option>Linux</option>
+					<select 
+						type="text" 
+						name="platform" 
+						id="platform" 
+						class="form-control"
+						[(ngModel)]="item.platform"
+						>
+							<option>Windows</option>
+							<option>MacOS</option>
+							<option>Linux</option>
 					</select>
 				</div>
 
