@@ -26,6 +26,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
 import { AuthService } from './services/auth.service';
+import { ItemService } from './services/item.service';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -55,7 +56,8 @@ import { AuthGuard } from './guards/auth.guard';
   providers: [
     AuthService,
     AuthGuard,
-    FlashMessagesService
+    FlashMessagesService,
+    ItemService
   ],
   bootstrap: [AppComponent]
 })
