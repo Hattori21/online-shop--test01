@@ -1,1 +1,37 @@
-{{ idItem }}
+<div class="row">
+	<div class="col-md-10 mx-auto mt-2">
+		<div class="card px-2 py-2">
+			<h2>Edit the item</h2>
+			<form action="">
+
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" name="title" id="title" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label for="description">Description</label>
+					<textarea type="text" name="description" id="description" class="form-control"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="specs">Specs</label>
+					<textarea type="text" name="specs" id="specs" class="form-control"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="platform">Platform</label>
+					<span class="badge badge-pill badge-dark"></span>
+					<select type="text" name="platform" id="platform" class="form-control">
+						<option>Windows</option>
+						<option>MacOS</option>
+						<option>Linux</option>
+					</select>
+				</div>
+
+				<input type="submit" value="Add new item!" class="btn btn-primary bt-block">
+
+			</form>
+		</div>
+	</div>
+</div>
