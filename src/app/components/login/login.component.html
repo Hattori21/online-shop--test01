@@ -1,3 +1,48 @@
-<p>
-  login works!
-</p>
+<div class="row">
+	<div class="col-md-6 mx-auto mt-3">
+		<div class="card">
+			<div class="card-body">
+
+				<h1 class="text-center">Login</h1>
+
+				<form (submit)="onSubmitLogin()">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+					</div>
+					<input type="submit" value="Login" class="btn btn-primary btn-block btn-lg">
+				</form>
+ 
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6 mx-auto mt-2">
+		<div class="card">
+			<div class="card-body card-body--social">
+
+				<button (click)="onClickLoginFacebook()" class="btn btn-lg btn-facebook">
+					<i class="fa fa-facebook"></i>
+					<span>Facebook</span>
+				</button>
+
+				<button (click)="onClickLoginGoogle()" class="btn btn-lg btn-gmail">
+					<i class="fa fa-google-plus"></i>
+					<span>Gmail</span>
+				</button>
+
+				<button (click)="onClickLoginTwitter()" class="btn btn-lg btn-twitter">
+					<i class="fa fa-twitter"></i>
+					<span>Twitter</span>
+				</button>
+
+			</div>	
+		</div>
+	</div>
+</div>	
