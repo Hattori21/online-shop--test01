@@ -2,21 +2,22 @@
 
 	<div class="col-md-10 blog-main">
 		<div class="blog-post mt-4">
-			<h1 class="blog-post-title border-bottom">Title</h1>
-			<p class="blog-post-meta">Date by <a href="#">Hattori21</a></p>
-			<p>Description</p>
+			<h1 class="blog-post-title border-bottom">{{item.title}}</h1>
+			<p class="blog-post-meta">On {{item.publishDate | date: 'dd-MMM'}} by <a href="#">{{item.userName}}</a></p>
+			<p>{{item.description}}</p>
 			<blockquote>
 				<h2>Specs</h2>
-				<p>Specs</p>
+				<p>{{item.specs}}</p>
 			</blockquote>
-			<p>Platforms</p>
+			<h2>Platform</h2>
+			<p>{{item.platform}}</p>
 		</div>
 	</div>
 
 	<div class="col-md-2">
-		<div class="btn-group pull-right mt-4">
-			<a routerLink="/edit-item/:id" class="btn btn-dark">Edit</a>
-			<a href="#" class="btn btn-danger" (click)="onClickDeleteItem">Delete</a>
+		<div class="btn-group pull-right mt-4" *ngIf="isItemOwner">
+			<a routerLink="/edit-item/{{item.id}}" class="btn btn-dark">Edit</a>
+			<a href="#" class="btn btn-danger" (click)="onClickDeleteItem()">Delete</a>
 		</div>
 	</div>
 
