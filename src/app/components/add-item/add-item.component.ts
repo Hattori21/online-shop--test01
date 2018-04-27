@@ -41,7 +41,6 @@ export class AddItemComponent implements OnInit {
   		this.itemService.addNewItem(value);
   	});
   	this.router.navigate(['/']);
-  	console.log(value);
   }
 
 }
