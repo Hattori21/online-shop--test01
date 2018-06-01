@@ -15,11 +15,15 @@ import { DetailItemComponent } from './components/detail-item/detail-item.compon
 import { EditItemComponent } from './components/edit-item/edit-item.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ImageDetailComponent } from './components/image-detail/image-detail.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
@@ -27,6 +31,8 @@ import { environment } from '../environments/environment';
 
 import { AuthService } from './services/auth.service';
 import { ItemService } from './services/item.service';
+import { ImageService } from './services/image.service';
+import { UploadService } from './services/upload.service';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -42,14 +48,18 @@ import { AuthGuard } from './guards/auth.guard';
     DetailItemComponent,
     EditItemComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    GalleryComponent,
+    ImageDetailComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, 'onlineshop'),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
     AngularFirestoreModule,
     FlashMessagesModule
   ],
@@ -57,7 +67,9 @@ import { AuthGuard } from './guards/auth.guard';
     AuthService,
     AuthGuard,
     FlashMessagesService,
-    ItemService
+    ItemService,
+    ImageService,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })
