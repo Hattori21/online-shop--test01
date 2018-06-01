@@ -18,9 +18,12 @@ import { SignupComponent } from './components/signup/signup.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ImageDetailComponent } from './components/image-detail/image-detail.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
@@ -51,7 +54,8 @@ import { AuthGuard } from './guards/auth.guard';
     SignupComponent,
     GalleryComponent,
     ImageDetailComponent,
-    UploadComponent
+    UploadComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ import { AuthGuard } from './guards/auth.guard';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AuthService,
