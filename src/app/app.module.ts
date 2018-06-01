@@ -22,6 +22,8 @@ import { UploadComponent } from './components/upload/upload.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -61,7 +63,8 @@ import { AuthGuard } from './guards/auth.guard';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AuthService,

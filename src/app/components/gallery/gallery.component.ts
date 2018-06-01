@@ -3,6 +3,8 @@ import { ImageService } from '../../services/image.service';
 import { GalleryImage } from '../../models/galleryImage.model';
 import { Observable } from 'rxjs/Observable';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
