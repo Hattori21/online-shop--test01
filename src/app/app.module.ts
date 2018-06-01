@@ -18,6 +18,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ImageDetailComponent } from './components/image-detail/image-detail.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -53,7 +54,8 @@ import { AuthGuard } from './guards/auth.guard';
     SignupComponent,
     GalleryComponent,
     ImageDetailComponent,
-    UploadComponent
+    UploadComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
